@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="File" class="ch.qos.logback.core.FileAppender">
+		<File>C:\Users\nawaz\Desktop\WORKSPACE\Logback-Demo\src\main\resources\myLog.log</File>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+
+	<logger name="com.cg.demo.controller" level="INFO" additivity="false">
+		<appender-ref ref="STDOUT"/>
+	</logger>
+
+	<logger name="com.cg.demo.controller" level="INFO" additivity="false">
+		<appender-ref ref="File"/>
+	</logger>
+	
+	<root level="INFO">
+		<appender-ref ref="STDOUT"/>
+	</root>
+	
+	<root level="INFO">
+		<appender-ref ref="File"/>
+	</root>
+
+
+
+</configuration>
